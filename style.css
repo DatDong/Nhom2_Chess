@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 3fr 6fr 3fr;
+  height: 100vh;
+  background-color: #1e1e1e;
+  font-family: Arial, sans-serif;
+  color: white;
+  gap: 20px;
+  padding: 100px;
+}
+
+.gameName {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.avatarChessGame {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid #555;
+  background-color: #333;
+}
+
+.avatarChessGame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.setting-control {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.setting-control {
+  display: flex;
+  gap: 24px;
+}
+
+.newGame,
+.undo,
+.redo,
+.reset {
+  background-color: #444;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+  text-align: center;
+  min-width: 80px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newGame:hover,
+.undo:hover,
+.redo:hover,
+.reset:hover {
+  background-color: #666;
+  transform: scale(1.05);
+}
+.newGame:hover { background-color: #0056b3; }
+.undo:hover    { background-color: #e0a800; }
+.redo:hover    { background-color: #218838; }
+.reset:hover   { background-color: #c82333; }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chessBox {
+  display: grid;
+  grid-template-columns: repeat(8, 90px);
+  grid-template-rows: repeat(8, 90px);
+  width: 720px;
+  height: 720px;
+  border: 2px solid #888;
+}
+
+.square {
+  width: 90px;
+  height: 90px;
+  position: relative;
+}
+
+.square img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.square.dark {
+  background-color: #769656;
+}
+
+.square.light {
+  background-color: #eeeed2;
+}
+
+.mainPlayer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.player {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.player__Avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #444;
+  flex-shrink: 0;
+}
+
+.player__Avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.player__Info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+.player__Name {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.player__Timer {
+  font-size: 16px;
+  color: white;
+}
+
+.timeGame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #333;
+  border-radius: 8px;
+}
